@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
     }
 
     private void initNavigationView() {
