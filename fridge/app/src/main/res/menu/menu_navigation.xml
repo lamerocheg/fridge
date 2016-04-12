@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/go_to_fridge_button"
+        android:title="@string/open_fridge_text"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_food_fork_drink"/>
+    <item android:id="@+id/add_food_button"
+        android:title="@string/add_fridge_text"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_food"/>
+    <item android:id="@+id/chat_button"
+        android:title="@string/developer_chat_text"
+        android:orderInCategory="4"
+        android:icon="@drawable/ic_wechat"/>
+    <item android:id="@+id/about_button"
+        android:title="@string/manual_text"
+        android:orderInCategory="8"
+        android:icon="@drawable/ic_information_outline"/>
+    <item android:id="@+id/settings_button"
+        android:title="@string/settings_text"
+        android:orderInCategory="9"
+        android:icon="@drawable/ic_settings"/>
+    <item android:id="@+id/exit_button"
+        android:title="@string/settings_button_text"
+        android:orderInCategory="10"
+        android:icon="@drawable/ic_logout"/>
+
+</menu>

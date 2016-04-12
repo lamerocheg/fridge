@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="by.bycha.fridge.MainActivity"
-    android:background="@color/mainBackground">
+    android:background="@color/mainBackground"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@color/colorPrimary"
+                />
 
-</RelativeLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_am_lazy_text"
+                android:id="@+id/i_am_lazy_button_main"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="35dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/button_background"
+                android:minWidth="300dp"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/add_food_button_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_fridge_text"
+                android:layout_above="@+id/i_am_lazy_button_main"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/button_background"
+                android:minWidth="300dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="15dp"
+                 />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/open_fridge_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@drawable/button_background"
+                android:minWidth="300dp"
+                android:textSize="14sp"
+                android:layout_above="@+id/add_food_button_main"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_fridge"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"
+                android:src="@drawable/empty_fridge"/>
+
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        app:menu="@menu/menu_navigation"
+        app:headerLayout="@layout/navigation_header"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navigation">
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
