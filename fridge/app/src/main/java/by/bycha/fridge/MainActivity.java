@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             if (jsonSettings.getInt("length_of_recipe_list") > 0 && jsonSettings.getInt("length_of_recipe_list") < 35) {
                 image.setImageResource(R.drawable.empty_fridge);
             }
-            else if (jsonSettings.getInt("length_of_recipe_list") > 35){
+            else if (jsonSettings.getInt("length_of_recipe_list") >= 35){
                 image.setImageResource(R.drawable.empty_fridge);
             }
         } catch (IOException | JSONException e) {
