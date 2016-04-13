@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
             while ((tmp = reader.readLine()) != null) result += tmp ;
             jsonSettings = new JSONObject(result);
             ImageView image = (ImageView) findViewById(R.id.image_fridge);
-            if (jsonSettings.getInt("length_of_recipe_list") > 0 && jsonSettings.getInt("length_of_recipe_list") < 30) {
+            if (jsonSettings.getInt("length_of_recipe_list") > 0 && jsonSettings.getInt("length_of_recipe_list") < 35) {
                 image.setImageResource(R.drawable.empty_fridge);
             }
-            else if (jsonSettings.getInt("length_of_recipe_list") > 30){
+            else if (jsonSettings.getInt("length_of_recipe_list") > 35){
                 image.setImageResource(R.drawable.empty_fridge);
             }
         } catch (IOException | JSONException e) {
