@@ -33,6 +33,8 @@
                 android:right="15dp"/>
             <corners
                 android:radius="5dp"/>
+            <solid
+                android:color="@color/mainBackground"/>
         </shape>
     </item>
 </selector>

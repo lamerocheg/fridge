@@ -9,4 +9,7 @@
     <string name="i_am_lazy_text">мне лениво!</string>
     <string name="toggle_open">open</string>
     <string name="toggle_close">close</string>
+    <string name="enter_ingridient_text">введите название ингридиента</string>
+    <string name="ingridient">ингридиент :</string>
+    <string name="fridge_title">ваш холодильник</string>
 </resources>

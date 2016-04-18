@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import by.bycha.fridge.R ;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
