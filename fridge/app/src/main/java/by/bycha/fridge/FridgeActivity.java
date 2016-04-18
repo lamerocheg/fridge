@@ -46,6 +46,7 @@ public class FridgeActivity extends AppCompatActivity {
         addCompleteCards();
     }
     private void initCardsWork(){
+        //впихнут логику аналогичную гитхабовскому примеру. массив данных будет глобальным
         cardLayout = (LinearLayout) findViewById(R.id.layout_for_cardview);
         layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -89,6 +90,7 @@ public class FridgeActivity extends AppCompatActivity {
             jsonIngridients = new JSONObject(result);
             for(int i = 0 ; i < jsonIngridients.getJSONArray("ingridients").length() ; i++)
             {
+                // добавить нужный текст в массив, потом вызвать обновление адаптера
                 addCard(jsonIngridients.getJSONArray("ingridients").getString(i));
 
             }
@@ -108,6 +110,7 @@ public class FridgeActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        // добавить нужный текст в массив, потом вызвать обновление адаптера
         addCard(textView.getText().toString());
         textView.setText("");
         saveJSON();
@@ -125,6 +128,7 @@ public class FridgeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    //лишнее
     private void addCard(String ingridientName){
         CardView card = new CardView(this);
         TextView text = new TextView(this);
