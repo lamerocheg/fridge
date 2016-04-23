@@ -123,6 +123,7 @@ public class FridgeActivity extends AppCompatActivity {
     };
 
 
+
     public void onAddButtonClick(View v){
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         data.add(0, textView.getText().toString());
