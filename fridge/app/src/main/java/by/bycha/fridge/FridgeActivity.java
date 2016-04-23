@@ -1,6 +1,5 @@
 package by.bycha.fridge;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -9,9 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import java.io.BufferedReader;
@@ -92,6 +90,7 @@ public class FridgeActivity extends AppCompatActivity {
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.main_appbar);
         appBarLayout.setExpanded(false, false);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+
             boolean isShow = false;
             int scrollRange = -1;
             FloatingActionButton buttonAdd = (FloatingActionButton) findViewById(R.id.fridge_search_button);
@@ -112,7 +111,17 @@ public class FridgeActivity extends AppCompatActivity {
                 }
             }
         });
+        ArrayAdapter<String> autoadapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, INGRIDIENTS);
+        AutoCompleteTextView textView = (AutoCompleteTextView)
+                findViewById(R.id.autoCompleteTextView);
+        textView.setAdapter(autoadapter);
     }
+
+    private static final String[] INGRIDIENTS = new String[]{
+            "Репчатый лук", "Коньяк", "Соль", "Сахар", "Мороженое", "Человеческое мясо"
+    };
+
 
     public void onAddButtonClick(View v){
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
