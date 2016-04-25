@@ -1,21 +1,20 @@
 package by.bycha.fridge;
 
-import android.media.Image;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import by.bycha.fridge.R ;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -48,10 +47,23 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
+
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.go_to_fridge_button:
+                        Intent intent = new Intent(getApplicationContext(), FridgeActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.exit_button:
+                        finish();
+                        break;
+                }
                 drawerLayout.closeDrawers();
                 return false;
             }
+
         });
+
 
     }
     private void checkFile(){
@@ -70,5 +82,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException | JSONException e) {
                 
         }
+    }
+
+    public void onFridgeClick(View w) {
+        Intent intent = new Intent(this, FridgeActivity.class);
+        startActivity(intent);
     }
 }

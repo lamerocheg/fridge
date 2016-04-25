@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -112,21 +113,34 @@ public class FridgeActivity extends AppCompatActivity {
             }
         });
         ArrayAdapter<String> autoadapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, INGRIDIENTS);
+                android.R.layout.simple_dropdown_item_1line, Constants.INGRIDIENTS_NAME);
         AutoCompleteTextView textView = (AutoCompleteTextView)
                 findViewById(R.id.autoCompleteTextView);
         textView.setAdapter(autoadapter);
     }
 
-    private static final String[] INGRIDIENTS = new String[]{
-            "Репчатый лук", "Коньяк", "Соль", "Сахар", "Мороженое", "Человеческое мясо"
-    };
 
 
 
     public void onAddButtonClick(View v){
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
-        data.add(0, textView.getText().toString());
+        String text = textView.getText().toString();
+        if (text.length() < 2) {
+            Toast.makeText(this, "Ингридиент не может иметь такое короткое название =)", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Boolean flag = true;
+        for (int i = 0; i < Constants.INGRIDIENTS_NAME.length; i++) {
+            if (text.equals(Constants.INGRIDIENTS_NAME[i])) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            Toast.makeText(this, "Ингридиент не встречается в наших рецептах, попробуйте вести другой ингридиент", Toast.LENGTH_LONG).show();
+            return;
+        }
+        data.add(0, text);
         adapter.notifyDataSetChanged();
         textView.setText("");
         saveDATA();

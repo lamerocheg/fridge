@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginLeft="12dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mainBackground">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipeitem.cardView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/recipeitem.title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ризотто с человеческим мясом"
+                android:layout_marginLeft="10sp"
+                android:textColor="#000000"
+                android:textSize="9pt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="7dp">
+
+                <ImageView
+                    android:id="@+id/recipeitem.image"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
+
+                        <ImageView
+                            android:layout_width="18sp"
+                            android:layout_height="18sp"
+                            android:src="@drawable/ic_paperclip"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:id="@+id/recipeitem.timeforcoocking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="13:30"
+                            android:textSize="18sp"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="3dp">
+
+                        <ImageView
+                            android:layout_width="18sp"
+                            android:layout_height="18sp"
+                            android:src="@drawable/ic_paperclip"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:id="@+id/recipeitem.coutofportion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 порций"
+                            android:textSize="18sp"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="3dp">
+
+                        <ImageView
+                            android:layout_width="18sp"
+                            android:layout_height="18sp"
+                            android:src="@drawable/ic_paperclip"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:id="@+id/recipeitem.tag1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="русская кухня"
+                            android:textSize="18sp"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="3dp">
+
+                        <ImageView
+                            android:layout_width="18sp"
+                            android:layout_height="18sp"
+                            android:src="@drawable/ic_paperclip"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:id="@+id/tag2"
+                            android:layout_margin="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="супы "
+                            android:textSize="18sp"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recipeitem.description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="15sp"
+                android:text="Этот, советского происхождения, коктейль правильнее всего, наверное, назвать очень эффективным. Правда, есть еще более действенный — «Северное сияние», где вместо водки в ход идет чистый спирт." />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

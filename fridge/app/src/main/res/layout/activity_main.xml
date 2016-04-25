@@ -44,20 +44,7 @@
                 android:clickable="true"
                 android:allowUndo="true" />
 
-            <Button
-                android:id="@+id/add_food_button_main"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/add_fridge_text"
-                android:layout_above="@+id/i_am_lazy_button_main"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/colorPrimaryDark"
-                android:background="@drawable/button_background"
-                android:focusable="false"
-                android:minWidth="300dp"
-                android:textSize="14sp"
-                android:layout_marginBottom="15dp"
-                android:clickable="true" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,11 +54,13 @@
                 android:background="@drawable/button_background"
                 android:minWidth="300dp"
                 android:textSize="14sp"
-                android:layout_above="@+id/add_food_button_main"
+                android:layout_above="@+id/i_am_lazy_button_main"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="15dp"
                 android:clickable="true"
-                android:focusableInTouchMode="false" />
+                android:focusableInTouchMode="false"
+                android:id="@+id/main.open_fridge_button"
+                android:onClick="onFridgeClick" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -80,7 +69,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="150dp"
-                android:src="@drawable/empty_fridge"/>
+                android:src="@drawable/empty_fridge"
+                android:onClick="onFridgeClick" />
 
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
